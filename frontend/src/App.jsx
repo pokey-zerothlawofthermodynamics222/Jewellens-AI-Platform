@@ -160,7 +160,7 @@ function Navbar({page,setPage,user,cartCount,wishCount}) {
     <header style={{position:"sticky",top:0,zIndex:800,background:scrolled?"rgba(253,252,249,.97)":"var(--pearl)",borderBottom:"1px solid var(--cream)",backdropFilter:"blur(10px)",transition:"all .3s"}}>
       <div style={{maxWidth:1280,margin:"0 auto",padding:"0 24px",display:"flex",alignItems:"center",justifyContent:"space-between",height:64}}>
         <button onClick={()=>setPage("home")} style={{background:"none",border:"none",cursor:"pointer",padding:0}}>
-          <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:22,color:"var(--charcoal)",letterSpacing:"2px",lineHeight:1}}>Tanishq</div>
+          <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:22,color:"var(--charcoal)",letterSpacing:"2px",lineHeight:1}}>JewelLens</div>
           <div style={{fontSize:7,letterSpacing:"4px",color:"var(--gold)",textTransform:"uppercase",fontWeight:600}}>AI Platform</div>
         </button>
         <nav style={{display:"flex",gap:4}}>
@@ -264,13 +264,13 @@ function DetailPage({item,onBack,onAddToCart,onAddToWishlist,user,setPage}) {
 function JewelModel({side="left"}) {
   return (
     <div style={{position:"absolute",top:"50%",transform:`translateY(-50%)${side==="right"?" scaleX(-1)":""}`,left:side==="right"?"auto":0,right:side==="right"?0:"auto",width:180,opacity:.1,pointerEvents:"none"}}>
-      <svg viewBox="0 0 120 320" fill="none" style={{width:"100%",height:"auto"}}>
-        <ellipse cx="60" cy="40" rx="22" ry="26" fill="#D4A84B"/>
-        <path d="M38 66 Q30 90 28 130 Q26 170 30 200 Q38 240 46 270 Q52 285 60 290 Q68 285 74 270 Q82 240 90 200 Q94 170 92 130 Q90 90 82 66 Q72 80 60 82 Q48 80 38 66Z" fill="#D4A84B"/>
-        <path d="M28 130 Q14 140 10 180 Q8 200 20 210 Q28 215 32 200" fill="#D4A84B"/>
-        <path d="M92 130 Q106 140 110 180 Q112 200 100 210 Q92 215 88 200" fill="#D4A84B"/>
-        <path d="M46 270 Q44 290 50 310 Q54 318 58 320" stroke="#D4A84B" strokeWidth="8" strokeLinecap="round"/>
-        <path d="M74 270 Q76 290 70 310 Q66 318 62 320" stroke="#D4A84B" strokeWidth="8" strokeLinecap="round"/>
+      <svg viewBox="0 0 120 320" fill="none" style={{width:"100%",height:"auto" }}>
+        <ellipse cx="60" cy="40" rx="22" ry="26" display="none" fill="#D4A84B"/>
+        <path d="M38 66 Q30 90 28 130 Q26 170 30 200 Q38 240 46 270 Q52 285 60 290 Q68 285 74 270 Q82 240 90 200 Q94 170 92 130 Q90 90 82 66 Q72 80 60 82 Q48 80 38 66Z" display="none" fill="#D4A84B"/>
+        <path d="M28 130 Q14 140 10 180 Q8 200 20 210 Q28 215 32 200" display="none" fill="#D4A84B"/>
+        <path d="M92 130 Q106 140 110 180 Q112 200 100 210 Q92 215 88 200"  display="none" fill="#D4A84B"/>
+        <path d="M46 270 Q44 290 50 310 Q54 318 58 320" stroke="#D4A84B" strokeWidth="8"  display="none" strokeLinecap="round"/>
+        <path d="M74 270 Q76 290 70 310 Q66 318 62 320" stroke="#1d1c1a" strokeWidth="8" strokeLinecap="round" display="none"/>
       </svg>
     </div>
   );
@@ -284,8 +284,8 @@ function HomePage({setPage}) {
         <JewelModel side="left"/><JewelModel side="right"/>
         <div style={{position:"relative",maxWidth:680,margin:"0 auto"}} className="fade-up">
           <div style={{fontFamily:"'Pinyon Script',cursive",fontSize:22,color:"rgba(212,168,83,.7)",marginBottom:12,letterSpacing:"2px"}}>Crafted with Devotion</div>
-          <h1 style={{fontFamily:"'Cormorant Garamond',serif",fontWeight:300,fontSize:"clamp(32px,5vw,62px)",color:"var(--ivory)",lineHeight:1.12,marginBottom:24}}>Discover Your Perfect<br/><em style={{color:"var(--gold-lt)",fontStyle:"italic"}}>Tanishq Jewel</em></h1>
-          <p style={{fontFamily:"'Cormorant Garamond',serif",fontStyle:"italic",fontSize:18,color:"#8A7A60",lineHeight:1.9,marginBottom:44}}>Describe your vision, upload a sketch, or speak your dream —<br/>our AI finds the exact match from the Tanishq collection.</p>
+          <h1 style={{fontFamily:"'Cormorant Garamond',serif",fontWeight:300,fontSize:"clamp(32px,5vw,62px)",color:"var(--ivory)",lineHeight:1.12,marginBottom:24}}>Discover Your Perfect<br/><em style={{color:"var(--gold-lt)",fontStyle:"italic"}}>JewelLens Jewel</em></h1>
+          <p style={{fontFamily:"'Cormorant Garamond',serif",fontStyle:"italic",fontSize:18,color:"#8A7A60",lineHeight:1.9,marginBottom:44}}>Describe your vision, upload a sketch, or speak your dream —<br/>our AI finds the exact match from the Jewellry collection.</p>
           <div style={{display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap"}}>
             <Btn onClick={()=>setPage("search")} style={{fontSize:11,letterSpacing:"2px",padding:"13px 32px"}}>AI Jewellery Search</Btn>
             <Btn onClick={()=>setPage("shop")} variant="outline" style={{borderColor:"rgba(212,168,83,.5)",color:"var(--gold-lt)",fontSize:11,letterSpacing:"2px",padding:"13px 32px"}}>Browse Collection</Btn>
@@ -319,7 +319,7 @@ function HomePage({setPage}) {
       <div style={{maxWidth:1200,margin:"72px auto 0",padding:"0 24px 80px"}}>
         <GoldLine/>
         <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:0}}>
-          {[["Zero Hallucination","Only real items from the Tanishq catalogue are ever returned. The AI never invents jewellery."],["Strict Category Match","Search necklaces and get only necklaces. No cross-category results under any condition."],["Multimodal AI Search","Text, reference photos, hand-drawn sketches, and voice — all understood with precision."]].map(([title,desc],i)=>(
+          {[["Zero Hallucination","Only real items from the Jewelry catalogue are ever returned. The AI never invents jewellery."],["Strict Category Match","Search necklaces and get only necklaces. No cross-category results under any condition."],["Multimodal AI Search","Text, reference photos, hand-drawn sketches, and voice — all understood with precision."]].map(([title,desc],i)=>(
             <div key={title} style={{textAlign:"center",padding:"36px 28px",borderRight:i<2?"1px solid var(--cream)":"none"}}>
               <div style={{width:28,height:1,background:"linear-gradient(to right,transparent,var(--gold),transparent)",margin:"0 auto 22px"}}/>
               <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:20,marginBottom:12,color:"var(--charcoal)"}}>{title}</div>
@@ -494,94 +494,339 @@ function SearchPage({addToCart,addToWishlist,user,setPage}) {
     </div>
   );
 }
+function ShopPage({ addToCart, addToWishlist, user, setPage }) {
+  const [cat, setCat] = useState("all");
+  const [sort, setSort] = useState("default");
+  const [allItems, setAllItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedItem, setSelectedItem] = useState(null);
 
-function ShopPage({addToCart,addToWishlist,user,setPage}) {
-  const [cat,setCat]=useState("all");
-  const [sort,setSort]=useState("default");
-  const [allItems,setAllItems]=useState([]);
-  const [loading,setLoading]=useState(true);
-  const [selectedItem,setSelectedItem]=useState(null);
-
-  function buildClientCatalog(){
-    return [...DATASET_RING_FILES.map((f,i)=>makeItem("rings",f,i)),...DATASET_NECKLACE_FILES.map((f,i)=>makeItem("necklaces",f,i))];
+  function buildClientCatalog() {
+    return [
+      ...DATASET_RING_FILES.map((f, i) => makeItem("rings", f, i)),
+      ...DATASET_NECKLACE_FILES.map((f, i) => makeItem("necklaces", f, i)),
+    ];
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     setLoading(true);
     fetch(`${API}/api/catalog`)
-      .then(r=>{if(!r.ok)throw new Error();return r.json();})
-      .then(data=>{
-        if(!data.items||data.items.length===0)throw new Error();
-        setAllItems(data.items.map((item,idx)=>{
-          const meta=generateItemMeta(item.id,item.category,idx);
-          return {id:item.id,category:item.category,name:item.name||meta.name,material:item.material||meta.material,style:item.style||meta.style,price:item.price||meta.price,description:meta.description,hallmark:meta.hallmark,collection:meta.collection,purity:meta.purity,fileName:item.id,imageUrl:`${API}${item.image_url}`,image_url:item.image_url};
-        }));
+      .then((r) => {
+        if (!r.ok) throw new Error();
+        return r.json();
       })
-      .catch(()=>setAllItems(buildClientCatalog()))
-      .finally(()=>setLoading(false));
-  },[]);
+      .then((data) => {
+        if (!data.items || data.items.length === 0) throw new Error();
 
-  if(selectedItem) return <DetailPage item={selectedItem} onBack={()=>setSelectedItem(null)} onAddToCart={addToCart} onAddToWishlist={addToWishlist} user={user} setPage={setPage}/>;
+        setAllItems(
+          data.items.map((item, idx) => {
+            const meta = generateItemMeta(item.id, item.category, idx);
+            return {
+              id: item.id,
+              category: item.category,
+              name: item.name || meta.name,
+              material: item.material || meta.material,
+              style: item.style || meta.style,
+              price: item.price || meta.price,
+              description: meta.description,
+              hallmark: meta.hallmark,
+              collection: meta.collection,
+              purity: meta.purity,
+              fileName: item.id,
+              imageUrl: `${API}${item.image_url}`,
+              image_url: item.image_url,
+            };
+          })
+        );
+      })
+      .catch(() => setAllItems(buildClientCatalog()))
+      .finally(() => setLoading(false));
+  }, []);
 
-  const sortFn=items=>items.slice().sort((a,b)=>sort==="price-asc"?a.price-b.price:sort==="price-desc"?b.price-a.price:0);
-  const necklaces=sortFn(allItems.filter(j=>j.category==="necklaces"));
-  const rings=sortFn(allItems.filter(j=>j.category==="rings"));
-  const filtered=sortFn(cat==="all"?allItems:allItems.filter(j=>j.category===cat));
-  const counts={all:allItems.length,necklaces:necklaces.length,rings:rings.length};
+  if (selectedItem) {
+    return (
+      <DetailPage
+        item={selectedItem}
+        onBack={() => setSelectedItem(null)}
+        onAddToCart={addToCart}
+        onAddToWishlist={addToWishlist}
+        user={user}
+        setPage={setPage}
+      />
+    );
+  }
+
+  const sortFn = (items) =>
+    items.slice().sort((a, b) =>
+      sort === "price-asc"
+        ? a.price - b.price
+        : sort === "price-desc"
+        ? b.price - a.price
+        : 0
+    );
+
+  const necklaces = sortFn(allItems.filter((j) => j.category === "necklaces"));
+  const rings = sortFn(allItems.filter((j) => j.category === "rings"));
+  const filtered = sortFn(
+    cat === "all" ? allItems : allItems.filter((j) => j.category === cat)
+  );
+
+  const counts = {
+    all: allItems.length,
+    necklaces: necklaces.length,
+    rings: rings.length,
+  };
 
   return (
-    <div style={{maxWidth:1320,margin:"0 auto",padding:"52px 24px 80px"}}>
-      <div style={{textAlign:"center",marginBottom:44}}>
-        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:34,fontWeight:400,color:"var(--charcoal)"}}>The Tanishq Collection</h2>
-        <GoldLine/>
-        {!loading&&<p style={{color:"var(--smoke)",fontSize:12,letterSpacing:".5px"}}>{counts.all} pieces — {counts.necklaces} Necklaces · {counts.rings} Rings</p>}
+    <div style={{ width: "100%", padding: 0, margin: 0 }}>
+      {/* Full-width hero section */}
+      <div
+        style={{
+          width: "100%",
+          margin: 0,
+          padding: "70px 20px",
+          backgroundColor: "black",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          boxSizing: "border-box",
+        }}
+      >
+        <h2
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: 34,
+            fontWeight: 400,
+            color: "white",
+            margin: 0,
+            marginBottom: 20,
+          }}
+        >
+          The Jewelry Collection
+        </h2>
+
+        <GoldLine />
+
+        {!loading && (
+          <p
+            style={{
+              color: "var(--smoke)",
+              fontSize: 12,
+              letterSpacing: ".5px",
+              marginTop: 20,
+              marginBottom: 0,
+            }}
+          >
+            {counts.all} pieces — {counts.necklaces} Necklaces · {counts.rings} Rings
+          </p>
+        )}
       </div>
-      <div style={{display:"flex",gap:10,justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",marginBottom:36}}>
-        <div style={{display:"flex",gap:6}}>
-          {[["all","All"],["necklaces","Necklaces"],["rings","Rings"]].map(([c,label])=>(
-            <button key={c} onClick={()=>setCat(c)} style={{padding:"7px 18px",border:"1px solid var(--cream)",borderRadius:24,cursor:"pointer",fontSize:11,letterSpacing:".5px",background:cat===c?"var(--charcoal)":"var(--pearl)",color:cat===c?"var(--gold-pale)":"var(--smoke)",transition:"all .2s"}}>{label} ({counts[c]||0})</button>
-          ))}
+
+      {/* Main content container */}
+      <div
+        style={{
+          maxWidth: 1320,
+          margin: "0 auto",
+          padding: "32px 20px 0",
+          boxSizing: "border-box",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            gap: 10,
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            marginBottom: 36,
+          }}
+        >
+          <div style={{ display: "flex", gap: 6 }}>
+            {[
+              ["all", "All"],
+              ["necklaces", "Necklaces"],
+              ["rings", "Rings"],
+            ].map(([c, label]) => (
+              <button
+                key={c}
+                onClick={() => setCat(c)}
+                style={{
+                  padding: "7px 18px",
+                  border: "1px solid var(--cream)",
+                  borderRadius: 24,
+                  cursor: "pointer",
+                  fontSize: 11,
+                  letterSpacing: ".5px",
+                  background: cat === c ? "var(--charcoal)" : "var(--pearl)",
+                  color: cat === c ? "var(--gold-pale)" : "var(--smoke)",
+                  transition: "all .2s",
+                }}
+              >
+                {label} ({counts[c] || 0})
+              </button>
+            ))}
+          </div>
+
+          <select
+            value={sort}
+            onChange={(e) => setSort(e.target.value)}
+            style={{
+              padding: "7px 14px",
+              border: "1px solid var(--cream)",
+              borderRadius: "var(--r)",
+              background: "var(--pearl)",
+              color: "var(--smoke)",
+              fontSize: 11,
+              outline: "none",
+              cursor: "pointer",
+            }}
+          >
+            <option value="default">Sort: Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
         </div>
-        <select value={sort} onChange={e=>setSort(e.target.value)} style={{padding:"7px 14px",border:"1px solid var(--cream)",borderRadius:"var(--r)",background:"var(--pearl)",color:"var(--smoke)",fontSize:11,outline:"none",cursor:"pointer"}}>
-          <option value="default">Sort: Default</option>
-          <option value="price-asc">Price: Low to High</option>
-          <option value="price-desc">Price: High to Low</option>
-        </select>
+
+        {loading ? (
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20 }}>
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div
+                key={i}
+                style={{
+                  borderRadius: "var(--r-lg)",
+                  overflow: "hidden",
+                  border: "1px solid var(--cream)",
+                }}
+              >
+                <div className="skeleton" style={{ height: 240, width: "100%" }} />
+                <div style={{ padding: 16 }}>
+                  <div
+                    className="skeleton"
+                    style={{ height: 14, width: "80%", marginBottom: 8 }}
+                  />
+                  <div
+                    className="skeleton"
+                    style={{ height: 10, width: "50%", marginBottom: 12 }}
+                  />
+                  <div className="skeleton" style={{ height: 16, width: "40%" }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : cat === "all" ? (
+          <>
+            <div style={{ marginBottom: 52 }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 16,
+                  marginBottom: 28,
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: 22,
+                    color: "var(--charcoal)",
+                  }}
+                >
+                  Necklaces
+                </div>
+                <div style={{ height: 1, flex: 1, background: "var(--cream)" }} />
+                <div
+                  style={{
+                    fontSize: 11,
+                    color: "var(--smoke)",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  {counts.necklaces} pieces
+                </div>
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20 }}>
+                {necklaces.map((item) => (
+                  <ProductCard
+                    key={item.id}
+                    item={item}
+                    onAddToCart={addToCart}
+                    onAddToWishlist={addToWishlist}
+                    user={user}
+                    setPage={setPage}
+                    onSelect={setSelectedItem}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 16,
+                  marginBottom: 28,
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: 22,
+                    color: "var(--charcoal)",
+                  }}
+                >
+                  Rings
+                </div>
+                <div style={{ height: 1, flex: 1, background: "var(--cream)" }} />
+                <div
+                  style={{
+                    fontSize: 11,
+                    color: "var(--smoke)",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  {counts.rings} pieces
+                </div>
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20 }}>
+                {rings.map((item) => (
+                  <ProductCard
+                    key={item.id}
+                    item={item}
+                    onAddToCart={addToCart}
+                    onAddToWishlist={addToWishlist}
+                    user={user}
+                    setPage={setPage}
+                    onSelect={setSelectedItem}
+                  />
+                ))}
+              </div>
+            </div>
+          </>
+        ) : (
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20 }}>
+            {filtered.map((item) => (
+              <ProductCard
+                key={item.id}
+                item={item}
+                onAddToCart={addToCart}
+                onAddToWishlist={addToWishlist}
+                user={user}
+                setPage={setPage}
+                onSelect={setSelectedItem}
+              />
+            ))}
+          </div>
+        )}
       </div>
-      {loading?(
-        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:20}}>
-          {Array.from({length:8}).map((_,i)=>(
-            <div key={i} style={{borderRadius:"var(--r-lg)",overflow:"hidden",border:"1px solid var(--cream)"}}>
-              <div className="skeleton" style={{height:240,width:"100%"}}/>
-              <div style={{padding:16}}><div className="skeleton" style={{height:14,width:"80%",marginBottom:8}}/><div className="skeleton" style={{height:10,width:"50%",marginBottom:12}}/><div className="skeleton" style={{height:16,width:"40%"}}/></div>
-            </div>
-          ))}
-        </div>
-      ):cat==="all"?(
-        <>
-          <div style={{marginBottom:52}}>
-            <div style={{display:"flex",alignItems:"center",gap:16,marginBottom:28}}>
-              <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:22,color:"var(--charcoal)"}}>Necklaces</div>
-              <div style={{height:1,flex:1,background:"var(--cream)"}}/>
-              <div style={{fontSize:11,color:"var(--smoke)",letterSpacing:"1px"}}>{counts.necklaces} pieces</div>
-            </div>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:20}}>{necklaces.map(item=><ProductCard key={item.id} item={item} onAddToCart={addToCart} onAddToWishlist={addToWishlist} user={user} setPage={setPage} onSelect={setSelectedItem}/>)}</div>
-          </div>
-          <div>
-            <div style={{display:"flex",alignItems:"center",gap:16,marginBottom:28}}>
-              <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:22,color:"var(--charcoal)"}}>Rings</div>
-              <div style={{height:1,flex:1,background:"var(--cream)"}}/>
-              <div style={{fontSize:11,color:"var(--smoke)",letterSpacing:"1px"}}>{counts.rings} pieces</div>
-            </div>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:20}}>{rings.map(item=><ProductCard key={item.id} item={item} onAddToCart={addToCart} onAddToWishlist={addToWishlist} user={user} setPage={setPage} onSelect={setSelectedItem}/>)}</div>
-          </div>
-        </>
-      ):(
-        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:20}}>{filtered.map(item=><ProductCard key={item.id} item={item} onAddToCart={addToCart} onAddToWishlist={addToWishlist} user={user} setPage={setPage} onSelect={setSelectedItem}/>)}</div>
-      )}
     </div>
   );
 }
+
 
 function CartPage({cart,removeFromCart,updateQty,placeOrder,setPage}) {
   const subtotal=cart.reduce((s,{item,qty})=>s+item.price*qty,0);
@@ -696,7 +941,7 @@ function AuthPage({onLogin,setPage}) {
   return (
     <div style={{maxWidth:420,margin:"80px auto",padding:"0 24px"}}>
       <div style={{background:"var(--pearl)",border:"1px solid var(--cream)",borderRadius:"var(--r-lg)",padding:44}}>
-        <div style={{textAlign:"center",marginBottom:32}}><div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:24,color:"var(--charcoal)",marginBottom:4}}>Welcome to Tanishq</div><GoldLine my={16}/></div>
+        <div style={{textAlign:"center",marginBottom:32}}><div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:24,color:"var(--charcoal)",marginBottom:4}}>Welcome to JewelLens</div><GoldLine my={16}/></div>
         <div style={{display:"flex",marginBottom:28,borderBottom:"1px solid var(--cream)"}}>{[["login","Sign In"],["signup","Register"]].map(([t,l])=><button key={t} onClick={()=>setTab(t)} className={`tab-btn${tab===t?" active":""}`} style={{flex:1,textAlign:"center"}}>{l}</button>)}</div>
         <div style={{display:"flex",flexDirection:"column",gap:14}}>
           {tab==="signup"&&<div><label style={{fontSize:10,letterSpacing:"1.5px",textTransform:"uppercase",color:"var(--smoke)",display:"block",marginBottom:6}}>Full Name</label><input value={form.name} onChange={e=>set("name",e.target.value)} placeholder="Your name" style={{width:"100%",padding:"11px 14px",border:"1px solid var(--cream)",borderRadius:"var(--r)",background:"var(--ivory)",outline:"none",fontSize:14}} onFocus={e=>e.target.style.border="1px solid var(--gold-lt)"} onBlur={e=>e.target.style.border="1px solid var(--cream)"}/></div>}
@@ -739,12 +984,8 @@ function ProfilePage({user,updateUser,onLogout}) {
 }
 
 const TEAM = [
-  {name:"Arjun Sharma",role:"Lead AI Engineer",contact:"arjun.sharma@tanishqai.in",desc:"Architected the FAISS retrieval system and CLIP-based visual search pipeline. Expert in vector embeddings and multimodal AI.",skills:["FAISS","CLIP","Python","FastAPI"]},
-  {name:"Priya Krishnan",role:"Frontend Developer",contact:"priya.krishnan@tanishqai.in",desc:"Designed and built the entire React frontend with a focus on luxury UX and performance optimisation.",skills:["React","JavaScript","CSS","UX Design"]},
-  {name:"Rahul Mehta",role:"Backend Engineer",contact:"rahul.mehta@tanishqai.in",desc:"Developed the FastAPI backend, image path resolution system and catalog API endpoints.",skills:["FastAPI","Python","REST APIs","Docker"]},
-  {name:"Sneha Patel",role:"Data Scientist",contact:"sneha.patel@tanishqai.in",desc:"Curated the jewellery dataset, built the labelling pipeline, and generated AI descriptions for all 490+ items.",skills:["Python","Pandas","Gemini AI","Data Pipeline"]},
-  {name:"Vikram Nair",role:"ML Operations",contact:"vikram.nair@tanishqai.in",desc:"Manages model deployment, index rebuilding, and system monitoring for the production AI platform.",skills:["MLOps","Docker","Linux","Monitoring"]},
-];
+    {name:"Sandhiya Sankar",role:"AIDS",contact:"sandhiyasankar333@gmail.com",desc:"Designed and built the entire frontend, defined platform workflows and features, and integrated the UI for retrieval functionality and performance optimization.",skills:["React","JavaScript","Product Design", "CSS","UX Design",]},
+  {name:"Kavithamani Palanisamy",role:"CSE",contact:"kavithamanipj7@gmail.com",desc:"Architected the FAISS retrieval system and CLIP-based visual search pipeline. Expert in vector embeddings and multimodal AI.",skills:["FAISS","CLIP","Python","FastAPI"]}];
 
 function DeveloperPage() {
   return (
@@ -752,12 +993,12 @@ function DeveloperPage() {
       <div style={{background:"linear-gradient(135deg,#0D0D0D 0%,#1C1C1C 100%)",padding:"72px 40px 64px",textAlign:"center"}}>
         <div style={{fontFamily:"'Pinyon Script',cursive",fontSize:20,color:"rgba(212,168,83,.6)",marginBottom:10}}>The Minds Behind</div>
         <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:40,fontWeight:300,color:"var(--ivory)",marginBottom:16}}>Development Team</h2>
-        <p style={{color:"#8A7A60",fontSize:14,fontStyle:"italic",fontFamily:"'Cormorant Garamond',serif"}}>Tanishq AI Platform · Jewellery Intelligence Platform v2.1</p>
+        <p style={{color:"#8A7A60",fontSize:14,fontStyle:"italic",fontFamily:"'Cormorant Garamond',serif"}}>JwelLens AI· Jewellery Intelligence Platform</p>
       </div>
       <div style={{maxWidth:1100,margin:"0 auto",padding:"72px 24px 80px"}}>
         <div style={{background:"var(--pearl)",border:"1px solid var(--cream)",borderLeft:"3px solid var(--gold)",borderRadius:"var(--r-lg)",padding:"32px 36px",marginBottom:56}}>
           <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:24,color:"var(--charcoal)",marginBottom:16}}>About the Project</div>
-          <p style={{fontSize:14,lineHeight:1.9,color:"var(--graphite)",marginBottom:16}}>The Tanishq AI Platform is an advanced multimodal jewellery discovery system combining CLIP visual embeddings, FAISS vector search, and Gemini AI to help customers find their perfect piece from the Tanishq catalogue.</p>
+          <p style={{fontSize:14,lineHeight:1.9,color:"var(--graphite)",marginBottom:16}}>The JewelLens AI Platform is an advanced multimodal jewellery discovery system combining CLIP visual embeddings, FAISS vector search, and Gemini AI to help customers find their perfect piece from the Jewelry catalogue.</p>
           <p style={{fontSize:14,lineHeight:1.9,color:"var(--graphite)"}}>The system supports text search, voice input, image upload, and sketch-based retrieval with strict category enforcement. Zero hallucination is guaranteed: only real dataset images are ever returned.</p>
           <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:16,marginTop:24}}>
             {[["490+","Jewellery Items"],["CLIP ViT-B/32","Visual Embeddings"],["Gemini 2.5","Language AI"],["FAISS","Vector Search"]].map(([val,label])=>(
@@ -813,7 +1054,7 @@ function SupportPage() {
       </div>
       <div style={{maxWidth:1100,margin:"0 auto",padding:"72px 24px 80px"}}>
         <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:24,marginBottom:64}}>
-          {[{icon:"phone",title:"Call Us",sub:"Quick Support",value:"1800-266-0123",note:"Mon-Sat, 10AM-7PM IST",action:"tel:18002660123",actionLabel:"Call Now"},{icon:"mail",title:"Email Us",sub:"Response within 24 hrs",value:"care@tanishq.co.in",note:"Available 7 days a week",action:"mailto:care@tanishq.co.in",actionLabel:"Send Email"},{icon:"map",title:"Visit a Store",sub:"In-person experience",value:"Find Nearest Store",note:"1000+ stores across India",action:"https://www.tanishq.co.in/store-locator",actionLabel:"Find Store"}].map(item=>(
+          {[{icon:"phone",title:"Call Us",sub:"Quick Support",value:"1800-266-0123",note:"Mon-Sat, 10AM-7PM IST",action:"tel:18002660123",actionLabel:"Call Now"},{icon:"mail",title:"Email Us",sub:"Response within 24 hrs",value:"care@jewellens.co.in",note:"Available 7 days a week",action:"mailto:care@jewellens.co.in",actionLabel:"Send Email"},{icon:"map",title:"Visit a Store",sub:"In-person experience",value:"Find Nearest Store",note:"1000+ stores across India",action:"https://www.tanishq.co.in/store-locator",actionLabel:"Find Store"}].map(item=>(
             <div key={item.title} style={{background:"var(--pearl)",border:"1px solid var(--cream)",borderRadius:"var(--r-lg)",padding:32,textAlign:"center",transition:"all .3s"}} onMouseEnter={e=>{e.currentTarget.style.boxShadow="var(--shadow-g)";e.currentTarget.style.borderColor="rgba(184,134,11,.25)";}} onMouseLeave={e=>{e.currentTarget.style.boxShadow="";e.currentTarget.style.borderColor="var(--cream)";}}>
               <div style={{width:52,height:52,borderRadius:"50%",background:"var(--gold-pale)",display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 16px",border:"1.5px solid rgba(184,134,11,.2)"}}><Icon name={item.icon} size={22} color="var(--gold-dark)"/></div>
               <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:20,color:"var(--charcoal)",marginBottom:4}}>{item.title}</div>
@@ -862,7 +1103,7 @@ function SupportPage() {
         <div style={{maxWidth:720,margin:"60px auto 0"}}>
           <h3 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:26,fontWeight:400,color:"var(--charcoal)",textAlign:"center",marginBottom:8}}>Frequently Asked Questions</h3>
           <GoldLine my={20}/>
-          {[["How does the AI search work?","Our AI uses CLIP visual embeddings to understand your text description, image upload, or voice query and finds the most visually and semantically similar jewellery from the Tanishq dataset."],["Why does the search only show rings or necklaces?","The system enforces strict category matching. If you search for a ring, only rings are returned. This prevents cross-category errors and ensures accurate results."],["What if I upload an image and get no results?","Ensure the image clearly shows a ring or necklace. The AI must detect the category. If no close match exists, the system displays the no-match message."],["Are all products BIS certified?","Yes. All Tanishq jewellery is BIS hallmarked and certified for purity and quality."],["What is your return policy?","We offer a 30-day hassle-free return policy on all purchases. Contact us at care@tanishq.co.in or call 1800-266-0123 to initiate a return."]].map(([q,a],i)=><FAQ key={i} question={q} answer={a}/>)}
+          {[["How does the AI search work?","Our AI uses CLIP visual embeddings to understand your text description, image upload, or voice query and finds the most visually and semantically similar jewellery from the Jewelry dataset."],["Why does the search only show rings or necklaces?","The system enforces strict category matching. If you search for a ring, only rings are returned. This prevents cross-category errors and ensures accurate results."],["What if I upload an image and get no results?","Ensure the image clearly shows a ring or necklace. The AI must detect the category. If no close match exists, the system displays the no-match message."],["Are all products BIS certified?","Yes. All jewellery is BIS hallmarked and certified for purity and quality."],["What is your return policy?","We offer a 30-day hassle-free return policy on all purchases. Contact us at care@jewellens.co.in or call 1800-266-0123 to initiate a return."]].map(([q,a],i)=><FAQ key={i} question={q} answer={a}/>)}
         </div>
       </div>
     </div>
@@ -873,7 +1114,7 @@ function ChatBot() {
   const [open,setOpen]=useState(false);
   const [input,setInput]=useState("");
   const [loading,setLoading]=useState(false);
-  const [messages,setMessages]=useState([{role:"assistant",text:"Hello, I am Priya, your Tanishq jewellery concierge. How may I assist you today?"}]);
+  const [messages,setMessages]=useState([{role:"assistant",text:"Hello, I am Priya, your JewelLens jewellery concierge. How may I assist you today?"}]);
   const endRef=useRef();
   const quickReplies=["Show necklaces","Diamond rings","Bridal jewellery","Price range"];
   const send=async()=>{
@@ -883,7 +1124,7 @@ function ChatBot() {
     setLoading(true);
     await new Promise(r=>setTimeout(r,900));
     const q=userMsg.toLowerCase();
-    let response="I can help you find the perfect Tanishq piece. Please visit our AI Search to find jewellery by description, image, or voice.";
+    let response="I can help you find the perfect Jewelry piece. Please visit our AI Search to find jewellery by description, image, or voice.";
     if(q.includes("necklace"))response="Our necklace collection features exquisite gold pendants, diamond chains, and heritage Kundan sets. Browse the Collection page to explore all 300+ designs.";
     else if(q.includes("ring"))response="Our ring collection includes solitaires, diamond eternity bands, and traditional gold designs. Use AI Search to find your perfect ring.";
     else if(q.includes("price")||q.includes("cost"))response="Our jewellery ranges from Rs.18,000 for elegant gold bands to over Rs.1,50,000 for premium diamond pieces. All prices include taxes.";
@@ -901,7 +1142,7 @@ function ChatBot() {
           <div style={{background:"linear-gradient(135deg,var(--charcoal),#2A1F0A)",padding:"16px 20px",borderRadius:"var(--r-lg) var(--r-lg) 0 0",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
             <div style={{display:"flex",alignItems:"center",gap:12}}>
               <div style={{width:34,height:34,background:"var(--gold-pale)",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Cormorant Garamond',serif",fontSize:16,color:"var(--gold-dark)",fontWeight:600}}>P</div>
-              <div><div style={{color:"var(--ivory)",fontSize:13,fontWeight:600,letterSpacing:".5px"}}>Priya · Tanishq AI</div><div style={{color:"var(--gold-lt)",fontSize:10,letterSpacing:".5px"}}>Online · Here to help</div></div>
+              <div><div style={{color:"var(--ivory)",fontSize:13,fontWeight:600,letterSpacing:".5px"}}>Priya · Jewellens jewelry AI</div><div style={{color:"var(--gold-lt)",fontSize:10,letterSpacing:".5px"}}>Online · Here to help</div></div>
             </div>
             <button onClick={()=>setOpen(false)} style={{background:"none",border:"none",cursor:"pointer"}}><Icon name="x" size={14} color="rgba(255,255,255,.5)"/></button>
           </div>
@@ -929,7 +1170,7 @@ function Footer({setPage}) {
       <div style={{maxWidth:1200,margin:"0 auto"}}>
         <div style={{display:"grid",gridTemplateColumns:"1.5fr 1fr 1fr 1fr",gap:40,marginBottom:48}}>
           <div>
-            <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:22,color:"var(--gold-pale)",marginBottom:4,letterSpacing:"1px"}}>Tanishq</div>
+            <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:22,color:"var(--gold-pale)",marginBottom:4,letterSpacing:"1px"}}>JewelLens</div>
             <div style={{fontSize:9,color:"var(--gold)",letterSpacing:"3px",marginBottom:16,textTransform:"uppercase"}}>AI Jewellery Platform</div>
             <p style={{fontSize:12,lineHeight:1.9,color:"#5A5A5A"}}>BIS certified jewellery. Zero hallucination AI retrieval. India's most trusted jewellery brand since 1994.</p>
           </div>
@@ -951,7 +1192,7 @@ function Footer({setPage}) {
           </div>
         </div>
         <div style={{borderTop:"1px solid rgba(184,134,11,.08)",paddingTop:24,display:"flex",justifyContent:"space-between",alignItems:"center",fontSize:11,flexWrap:"wrap",gap:8,letterSpacing:".3px"}}>
-          <span style={{color:"#4A4A4A"}}>© 2026 Tanishq AI Platform · All Rights Reserved · BIS Certified</span>
+          <span style={{color:"#4A4A4A"}}>© 2026 JewelLens AI Platform · All Rights Reserved · BIS Certified</span>
           <span style={{color:"rgba(184,134,11,.4)"}}>Crafted with AI · Built by Navigate Labs</span>
         </div>
       </div>
