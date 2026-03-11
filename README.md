@@ -1,165 +1,266 @@
-# Tanishq AI Jewellery Platform — patched React + FastAPI version
+# Jewellens AI Platform 💎
 
-This version is adjusted for your **React frontend**, not Streamlit.
+An AI-powered jewelry discovery and recommendation platform that allows
+users to explore jewelry collections using intelligent search and visual
+retrieval.
 
-## What was fixed
+This project combines **AI-based image embeddings, vector similarity
+search, and a modern web interface** to help users browse jewelry items
+like rings and necklaces.
 
-- corrected FAISS ranking for cosine similarity / inner product
-- added direct **image-to-image retrieval** for uploaded photos and sketches
-- added **multimodal retrieval** for text + image together
-- made Gemini optional instead of making the whole backend depend on it
-- made path handling portable across Windows and relative paths
-- improved category filtering for **rings vs necklaces**
-- added a safer rebuild script that indexes only files that really exist
-- added Windows helper scripts for rebuild, backend, and frontend startup
+------------------------------------------------------------------------
 
-## Important truth
+# Project Overview
 
-This code can only return items whose images actually exist inside:
+Jewellens AI Platform is a full-stack application consisting of:
 
-`Jewelry_RAG/data/Tanishq/`
+-   **Frontend**: React + Vite web interface
+-   **Backend**: FastAPI server
+-   **AI Retrieval System**: CLIP embeddings + FAISS vector search
+-   **Dataset**: Jewelry catalog images
 
-So before demoing 90% accuracy, make sure your local machine really contains all ring and necklace images, then rebuild the index.
+The platform allows users to:
 
----
+-   Browse jewelry collections
+-   Search jewelry intelligently
+-   View item details
+-   Add items to cart or wishlist
 
-## Folder setup you need
+------------------------------------------------------------------------
 
-```text
-TanishqAI_Platform_v3/
-  backend/
-  frontend/
-  Jewelry_RAG/
-    data/
-      Tanishq/
-        rings/
-        necklaces/
+# Features
+
+## Jewelry Catalog
+
+Users can explore the full jewelry collection including:
+
+-   Rings
+-   Necklaces
+
+Items are dynamically loaded from the backend API.
+
+## Smart AI Retrieval
+
+The system uses:
+
+-   **CLIP Vision Transformer**
+-   **FAISS Vector Search**
+
+to retrieve visually similar jewelry.
+
+## Product Details
+
+Each item includes:
+
+-   Name
+-   Material
+-   Style
+-   Price
+-   Collection
+-   Hallmark
+-   Purity
+
+## Wishlist and Cart
+
+Users can:
+
+-   Add jewelry to cart
+-   Add items to wishlist
+-   View selected items
+
+## Responsive UI
+
+The application provides a modern luxury-style interface optimized for
+browsing jewelry.
+
+------------------------------------------------------------------------
+
+# Tech Stack
+
+## Frontend
+
+-   React
+-   Vite
+-   JavaScript
+-   CSS
+
+## Backend
+
+-   FastAPI
+-   Python
+-   Uvicorn
+
+## AI & Retrieval
+
+-   SentenceTransformers CLIP Model
+-   FAISS Vector Database
+-   HuggingFace Transformers
+
+## Other Libraries
+
+-   NumPy
+-   Pillow
+-   Requests
+
+------------------------------------------------------------------------
+
+# Project Structure
+
+    Jewellens-AI-Platform
+    │
+    ├── backend
+    │   ├── main.py
+    │   ├── api routes
+    │   └── requirements.txt
+    │
+    ├── frontend
+    │   ├── src
+    │   │   ├── components
+    │   │   ├── pages
+    │   │   └── main.jsx
+    │   ├── index.html
+    │   └── package.json
+    │
+    ├── Jewelry_RAG
+    │   ├── data
+    │   ├── jewelry.index
+    │   ├── jewelry_visual.index
+    │   └── jewelry_hybrid.index
+    │
+    ├── run_backend.bat
+    └── README.md
+
+------------------------------------------------------------------------
+
+# How to Run the Project
+
+## 1 Install Requirements
+
+Ensure you have:
+
+-   Python 3.10+
+-   Node.js
+-   Git
+
+------------------------------------------------------------------------
+
+# Backend Setup
+
+Navigate to project root and run:
+
+``` bash
+pip install -r backend/requirements.txt
 ```
 
----
+Run the backend:
 
-## 1) Rebuild the FAISS index after copying images
-
-Open terminal in:
-
-```text
-TanishqAI_Platform_v3\Jewelry_RAG
+``` bash
+run_backend.bat
 ```
 
-Run:
+or manually:
 
-```powershell
-python rebuild_index.py
+``` bash
+uvicorn backend.main:app --reload
 ```
 
-This will create or refresh:
+Backend will start at:
 
-- `jewelry_visual.index`
-- `jewelry_hybrid.index`
-- `jewelry.index`
-- `image_paths.txt`
-- `jewelry_metadata.json`
+    http://localhost:8000
 
----
+------------------------------------------------------------------------
 
-## 2) Run backend
+# Frontend Setup
 
-Open terminal in:
+Open a new terminal and run:
 
-```text
-TanishqAI_Platform_v3\backend
-```
-
-Create and activate your virtual environment if needed, then run:
-
-```powershell
-pip install -r requirements.txt
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
-```
-
-Backend URL:
-
-```text
-http://127.0.0.1:8000
-```
-
-Health check:
-
-```text
-http://127.0.0.1:8000/health
-```
-
----
-
-## 3) Run frontend
-
-Open terminal in:
-
-```text
-TanishqAI_Platform_v3\frontend
-```
-
-Run:
-
-```powershell
+``` bash
+cd frontend
 npm install
 npm run dev
 ```
 
-Frontend usually opens at:
+Frontend will start at:
 
-```text
-http://127.0.0.1:5173
+    http://localhost:3000
+
+------------------------------------------------------------------------
+
+# Reset / Delete Existing User Data
+
+If you want to register a new user, delete the stored user database.
+
+Steps:
+
+1.  Navigate to backend storage folder
+2.  Delete the database file (example):
+
+```{=html}
+<!-- -->
 ```
+    users.db
 
----
+Then restart the backend.
 
-## 4) Optional Gemini setup
+The application will allow new user registration.
 
-If you want Gemini-powered spell correction and image text extraction, create:
+------------------------------------------------------------------------
 
-```text
-Jewelry_RAG\.env
-```
+# How to Use the Application
 
-with:
+1 Open the website
 
-```env
-GEMINI_API_KEY=your_key_here
-```
+    http://localhost:3000
 
-Without Gemini, the core retrieval still works.
+2 Register a user
 
----
+3 Browse jewelry collections
 
-## Windows quick-run files
+4 Click an item to view details
 
-You can also double-click these files:
+5 Add items to cart or wishlist
 
-- `rebuild_index.bat`
-- `run_backend.bat`
-- `run_frontend.bat`
+6 Explore necklaces and rings categories
 
-Or open them in Notepad and see the commands.
+------------------------------------------------------------------------
 
----
+# AI Working Flow
 
-## Best demo flow for your project
+The AI retrieval system works as follows:
 
-1. Copy all ring and necklace images into the correct folders
-2. Run `python rebuild_index.py`
-3. Start backend
-4. Start frontend
-5. Test these cases:
-   - text query: `gold ring with red stones`
-   - text query: `bridal necklace`
-   - upload a ring photo
-   - upload a necklace image
-   - upload a sketch
-   - voice input for a ring / necklace query
+1 User loads jewelry catalog
 
----
+2 Jewelry images are embedded using CLIP
 
-## Honest limitation
+3 Embeddings are stored in FAISS vector index
 
-I patched the code, but I could not magically restore missing ring image files from the uploaded zip because they are not present in the zip available here. If your local machine has them, this patched version is ready for that setup.
+4 When a search happens:
+
+-   Query is converted into embedding
+-   Similar vectors are retrieved
+-   Top matches are returned
+
+5 Frontend displays results.
+
+------------------------------------------------------------------------
+
+# Future Improvements
+
+Possible enhancements:
+
+-   Voice-based jewelry search
+-   Image upload search
+-   Recommendation engine
+-   Payment gateway
+-   User profiles
+-   Cloud deployment
+
+------------------------------------------------------------------------
+
+# Author
+
+Developed as an AI-powered jewelry exploration platform demonstrating:
+
+-   Vector similarity search
+-   AI image retrieval
+-   Full stack web development
